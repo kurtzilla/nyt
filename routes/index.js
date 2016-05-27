@@ -9,27 +9,18 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/books', function(req, res, next) {
+router.get('/books', function(req, res) {
 
     console.log('routing to books');
-	// unirest.get('http://api.nytimes.com/svc/books/v3/lists/hardcover-fiction.json?api-key=' + process.env.NYT_API_KEY)
-    unirest.get('http://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=' +
+	unirest.get('http://api.nytimes.com/svc/books/v3/lists/hardcover-fiction.json?api-key=' +
         process.env.NYT_API_KEY)
-
 	  .end(function (response) {
-	    // console.log('hello',response.body);
+	    console.log('hello',response.body.results.books);
+        var NYTBooks = response.body.results.books;
 
-        // console.log('res',res);
-        var rBody = response.body;
-        res.end(function(data){
-            console.log('data', rBody.results);
-        });
+        res.render('index', {books: NYTBooks});
     });
 
-
-
-
-    //   next();
 })
 
 module.exports = router;

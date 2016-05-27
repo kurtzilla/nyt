@@ -1,2 +1,10 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+{{#books}}
+<article>
+    <h2>{{this.title}}</h2>
+    by <strong>{{this.author}}</strong>
+    <img src="{{this.book_image}}">
+</article>
+{{/books}}
