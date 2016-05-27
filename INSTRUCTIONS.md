@@ -267,7 +267,7 @@ B. Use the links at the top to find and use another API for a brand new applicat
 
 What new questions do you have, now that you've gone through this exercise? List at least four of them.
 
-1.  
+1.  Figured out a bit more about what to look for in the req,res,next routes - handling
 1.  
 1.  
 1.  

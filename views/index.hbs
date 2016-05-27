@@ -5,6 +5,24 @@
 <article>
     <h2>{{this.title}}</h2>
     by <strong>{{this.author}}</strong>
+    {{#if this.book_image}}
     <img src="{{this.book_image}}">
+    {{/if}}
+    {{#if this.description}}
+    <p>
+        {{this.description}}
+    </p>
+    {{/if}}
+    {{#if this.rank}}
+    <p><strong>rank: </strong>
+        {{this.rank}}
+    </p>
+    {{/if}}
+    {{#if this.weeks_on_list}}
+    <p><strong>Weeks On List: </strong>
+        {{this.weeks_on_list}}
+    </p>
+    {{/if}}
+
 </article>
 {{/books}}
